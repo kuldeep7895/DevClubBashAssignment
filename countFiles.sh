@@ -1,6 +1,14 @@
 #! /bin/bash
-#program takes two arguments directory path and type of file
-#maxdepth specifies the level upto which search need to be made
-#type specifies only files to be searched
-#name specifies the particular extension need be searched
-find $1 -maxdepth 1 -type f -name "*"$2 | wc -l
+myvar=$( ls $1 )
+total_number=$( ls $1 | wc -l )
+a=0
+count=0
+while [ $a -lt $total_number ]
+do
+    string=$( ls /tmp/dir$ | head -$a | tail -1 )
+    if [[ $string == *"$2"* ]]; then
+        count=`expr $count + 1`
+    fi
+    a=`expr $a + 1`
+done
+echo $count
