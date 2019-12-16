@@ -11,7 +11,7 @@ a=0
 count=0
 while [ $a -lt $total_number ]
 do
-    string=$( ls /tmp/dir$ | head -$a | tail -1 )
+    string=$( ls $1 | head -$a | tail -1 )
     if [[ $string == *"$2"* ]]; then
         count=`expr $count + 1`
     fi
