@@ -1,7 +1,6 @@
 #! /bin/bash
 if [ $# -eq 0 ]; 
 then
-    echo "no"
     exit -1
 fi
 filename="$1"
